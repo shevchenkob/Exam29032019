@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchPage1 extends BasePage {
+public class SearchPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='g']")
     private List<WebElement> searchResultElements;
@@ -20,7 +20,7 @@ public class SearchPage1 extends BasePage {
     @FindBy (xpath = "//a[@aria-label='Page 2']")
     private WebElement pageTwo;
 
-    public SearchPage1(WebDriver driver) {
+    public SearchPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         waitUntilElementIsWisible(resultTotal, 5);
@@ -39,9 +39,9 @@ public class SearchPage1 extends BasePage {
         return searchResultElements.size();
     }
 
-    public SearchPage2 toNextPage (){
+    public SearchPage toNextPage (){
         pageTwo.click();
-        return new SearchPage2(driver);
+        return new SearchPage(driver);
     }
 
     public boolean isPageLoaded() {

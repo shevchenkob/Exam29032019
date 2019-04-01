@@ -16,10 +16,10 @@ private WebElement searchField;
         PageFactory.initElements(driver, this);
     }
 
-public SearchPage1 searchGoogle(String searchTerm){
+public SearchPage searchGoogle(String searchTerm){
     searchField.sendKeys(searchTerm);
     searchField.sendKeys(Keys.ENTER);
-return new SearchPage1(driver);
+return new SearchPage(driver);
 }
 
     public boolean isPageLoaded() {
